@@ -39,7 +39,7 @@ Cross.sec.rosetta <- dplyr::tibble(D_or_Dz = 'D',
   dplyr::mutate(Raclopride =  glue::glue(' {round(Raclopride,2)} ({round(Raclopride_perc)}%) '),
          AZ9369 =  glue::glue(' {round(AZ9369,2)} ({round(AZ9369_perc)}%) '), 
          PBR28 =  glue::glue(' {round(PBR28,2)} ({round(PBR28_perc)}%) '), 
-         UCBJ =  glue::glue(' {round(UCBJ,2)} ({round(UCBJ_perc)}%) ') ) %>%
+         UCBJ =  glue::glue(' {round(UCBJ,2)} ({round(UCBJ_perc,1)}%) ') ) %>%
   dplyr::select(D_or_Dz, Effsize, Raclopride, AZ9369, PBR28, UCBJ, N_at_80pwr)
 
 #Make rosetta for paired designs
@@ -73,7 +73,7 @@ Long.rosetta <- dplyr::tibble(D_or_Dz = 'Dz',
   dplyr::mutate(Raclopride =  glue::glue(' {round(Raclopride,2)} ({round(Raclopride_perc)}%) '),
                 AZ9369 =  glue::glue(' {round(AZ9369,2)} ({round(AZ9369_perc)}%) '), 
                 PBR28 =  glue::glue(' {round(PBR28,2)} ({round(PBR28_perc)}%) '), 
-                UCBJ =  glue::glue(' {round(UCBJ,2)} ({round(UCBJ_perc)}%) ') ) %>%
+                UCBJ =  glue::glue(' {round(UCBJ,2)} ({round(UCBJ_perc,1)}%) ') ) %>%
   dplyr::select(D_or_Dz, Effsize, Raclopride, AZ9369, PBR28, UCBJ, N_at_80pwr)
 
 rosetta <- dplyr::bind_rows(Cross.sec.rosetta,Long.rosetta)
